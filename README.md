@@ -58,7 +58,7 @@ The initial reference platform is the **UGreen DXP6800 Pro** with an Intel Core 
 
 See [ROADMAP.md](./ROADMAP.md).
 
-The project is structured around five milestones aligned with the NLnet / NGI Zero Commons Fund proposal (application code `2026-06-160`):
+The project is structured around five milestones aligned with the NLnet / NGI Zero Commons Fund proposal (application code `2026-06-1ac`):
 
 1. **High-performance infrastructure research** — ZFS-cache tuning for LLM/RAG workloads on Proxmox.
 2. **AI integration for privacy ecosystems** — AI-Bridge for Nextcloud and Paperless-ngx; local vector-DB pipeline.
