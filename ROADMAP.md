@@ -2,7 +2,7 @@
 
 This roadmap describes the planned development of PrivateCore AI as a community-reusable open-source framework for sovereign edge-AI on consumer NAS hardware.
 
-The work is structured around the five tasks of the **NLnet / NGI Zero Commons Fund** proposal `2026-06-160` (submitted May 2026; decision expected Q3 2026).
+The work is structured around the five tasks of the **NLnet / NGI Zero Commons Fund** proposal `2026-06-1ac` (submitted May 2026; decision expected Q3 2026).
 
 The timeline below assumes a positive funding decision and a project start in autumn 2026. Independent development on documentation, the public reference architecture, and community foundations begins immediately, regardless of the funding outcome.
 
