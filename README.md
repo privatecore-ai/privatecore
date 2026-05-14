@@ -68,7 +68,7 @@ The project is structured around five milestones aligned with the NLnet / NGI Ze
 
 ## Funding
 
-PrivateCore AI has applied for support from the **NLnet Foundation** under the [NGI Zero Commons Fund](https://nlnet.nl/commonsfund/) (application `2026-06-160`, submitted May 2026). Decision is expected in Q3 2026. This README will be updated accordingly.
+PrivateCore AI has applied for support from the **NLnet Foundation** under the [NGI Zero Commons Fund](https://nlnet.nl/commonsfund/) (application `2026-06-1ac`, submitted May 2026 — resubmission of 2026-06-160 with refined risk section and itemised hardware budget). Decision is expected in Q3 2026. This README will be updated accordingly.
 
 If the application is successful, the published deliverables of the funded work will be released under the Apache-2.0 licence in this repository.
 
