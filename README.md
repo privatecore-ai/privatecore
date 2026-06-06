@@ -7,6 +7,12 @@ Local LLMs · ZFS storage · Nextcloud & Paperless integration · 100 % data sov
 > Implementation work scheduled to begin pending the outcome of the NLnet / NGI Zero Commons Fund review (decision expected Q3 2026).
 
 ---
+## How this relates to existing work
+
+PrivateCore AI builds on established techniques (model cascades, knowledge
+distillation, structured RAG) and contributes their integration into a sovereign,
+self-hostable appliance. For an honest comparison to prior art, and what is
+genuinely our own contribution, see [docs/RELATED-WORK.md](docs/RELATED-WORK.md).
 
 ## Mission
 
