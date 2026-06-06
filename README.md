@@ -12,7 +12,7 @@ Local LLMs · ZFS storage · Nextcloud & Paperless integration · 100 % data sov
 PrivateCore AI builds on established techniques (model cascades, knowledge
 distillation, structured RAG) and contributes their integration into a sovereign,
 self-hostable appliance. For an honest comparison to prior art, and what is
-genuinely our own contribution, see [docs/RELATED-WORK.md](docs/RELATED-WORK.md).
+genuinely our own contribution, see [RELATED-WORK.md](RELATED-WORK.md).
 
 ## Mission
 
