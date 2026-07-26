@@ -3,8 +3,8 @@
 **A sovereign edge-AI framework for consumer NAS hardware.**
 Local LLMs · ZFS storage · Nextcloud & Paperless integration · 100 % data sovereignty.
 
-> **Project status:** Pre-alpha — public repository established for transparency.
-> Implementation work scheduled to begin pending the outcome of the NLnet / NGI Zero Commons Fund review (decision expected Q3 2026).
+> **Project status:** Actively developed. The reference deployment has been running in production for one household since mid-2026, as a nights-and-weekends project.
+> Development continues independently of the pending NLnet / NGI Zero Commons Fund review — see [Funding](#funding).
 
 ---
 ## How this relates to existing work
@@ -21,6 +21,15 @@ The dominant deployment model for "personal AI" today still relies on third-part
 **PrivateCore AI** addresses this gap by providing a complete, reproducible reference architecture for hosting modern AI workloads on commodity NAS-class hardware. Sensitive data — personal documents, calendars, communications, health and wellness data streams — never leaves the device.
 
 The project is explicitly positioned as a **community-reusable Common**: an open framework, not a product. All deployment automation, configuration guides, and the AI-bridge code are published under a permissive open-source licence.
+
+## What is implemented today
+
+- **Infrastructure:** Proxmox VE / TrueNAS Scale reference setup on consumer NAS hardware (UGreen DXP6800 Pro), ZFS throughout (NVMe pool for VMs, HDD pool for archives and backups), strict per-service network segmentation (the database host has no outbound internet at all).
+- **Personal data platform:** PostgreSQL 17 + PostGIS with row-level security, a multi-user data model, and a per-user **consent registry** — no document belonging to a user is ever processed by a cloud model without that user's recorded, revocable consent.
+- **Document ingest pipeline:** mobile capture → WebDAV inbox → webhook-driven ingest service (HMAC-authenticated) → EXIF stripping → QR decoding with cryptographic cross-check against Austrian fiscal receipt signatures (RKSV) → vision-LLM classification and type-specific extraction → schema-validated storage. See the [architecture write-up](./docs/architecture/01-document-ingest-pipeline.md).
+- **Extraction-proposal contract (C#/.NET):** a schema-versioned, forward-compatible JSON contract that reconciles multi-variant LLM extraction outputs before anything is committed to the domain tables — currently being implemented test-first (xUnit).
+- **MCP integration:** the platform's data (files, calendars, task boards) is exposed to Claude through Model Context Protocol workflows, with a tiered privacy model deciding what an LLM may ever see.
+- **Benchmark methodology:** every LLM call is recorded with model name, prompt version, token counts, latency, and cost — so the planned migration from cloud vision models to local ones can be measured per field, not guessed.
 
 ## Architecture overview
 
@@ -54,7 +63,11 @@ Core technology choices:
 - **Integrations:** Nextcloud (Assistant connector), Paperless-ngx (RAG ingestion), Immich (optional photo search)
 - **Deployment automation:** Ansible + Docker Compose; Terraform where useful
 
-See [ROADMAP.md](./ROADMAP.md) for the detailed milestone plan.
+## What is open — and what is not
+
+Everything needed to **reproduce the platform** is (or will be) public in this repository: architecture documentation, deployment automation, configuration guides, the AI-bridge code, and the write-ups in `docs/architecture/`. Code and scripts are Apache-2.0; documentation is CC BY 4.0.
+
+Two things are deliberately **not** part of the open framework: the maintainer's personal data and deployment specifics (redacted or generalised in all published material), and a separate commercial evaluation of Austrian receipt-processing use cases that builds *on top of* the framework. The Common is the framework itself — what anyone builds on it, including the maintainer, is their own.
 
 ## Reference hardware
 
@@ -80,7 +93,7 @@ If the application is successful, the published deliverables of the funded work 
 
 ## Contributing
 
-PrivateCore AI is a young project maintained by a single engineer. Contributions, issue reports, and design discussions are welcome — please note that during the pre-funding phase, response times may be irregular.
+PrivateCore AI is maintained by a single engineer, and both prospective **users** and **co-developers** are explicitly welcome — that is what a Common is for. Open an Issue or a Discussion if you want to reproduce the setup or pick up a roadmap item together. Please note that during the pre-funding phase, response times may be irregular.
 
 Once the funded work begins, the project will commit to a documented issue-response SLA and a monthly development update.
 
@@ -95,7 +108,7 @@ Documentation and write-ups are licensed under **CC BY 4.0** unless otherwise no
 ## Maintainer
 
 Markus Dröscher — Graz, Austria
-Contact: opening a GitHub Discussion is preferred over direct email during the pre-alpha phase.
+Contact: opening a GitHub Discussion is preferred over direct email.
 
 ---
 

@@ -22,6 +22,7 @@ Goals:
 Deliverables:
 
 - `README.md`, `ROADMAP.md`, `LICENSE`, `NOTICE` — done.
+- `docs/architecture/` write-up series — first installment ([document ingest pipeline](./docs/architecture/01-document-ingest-pipeline.md)) published July 2026; MCP integration and data-model write-ups to follow.
 - `CONTRIBUTING.md` — pending.
 - Draft architecture diagram — pending.
 - Public statement of scope and explicit out-of-scope items (no medical-device positioning, no regulated-domain claims during Phase A).
@@ -156,7 +157,7 @@ Acceptance criteria:
 
 ## Beyond the NLnet scope
 
-The work funded by the NGI Zero Commons Fund delivers the **open-source foundation**. Independently, the maintainer plans a complementary commercial offering (pre-configured appliance, support, branded use-case bundles) that is intended to fund continued maintenance and security updates of the openly published framework. The two layers are kept cleanly separated.
+The work funded by the NGI Zero Commons Fund delivers the **open-source foundation**. Independently, the maintainer plans a complementary commercial offering (pre-configured appliance, support, branded use-case bundles) that is intended to fund continued maintenance and security updates of the openly published framework. The two layers are kept cleanly separated — see ["What is open — and what is not"](./README.md#what-is-open--and-what-is-not) in the README.
 
 A longer-term Phase B — addressing regulated professional users (legal, medical, public sector) with the corresponding certifications — is **explicitly out of scope** of the Commons Fund proposal and will, if pursued at all, be the subject of a separate funding instrument.
 
@@ -174,4 +175,4 @@ All material changes will be tracked in the repository history of this file.
 
 ---
 
-*Last updated: 2026-05-14*
+*Last updated: 2026-07-26*
